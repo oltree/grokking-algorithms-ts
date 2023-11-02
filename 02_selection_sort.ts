@@ -23,5 +23,3 @@ const selectionSort = <T>(array: T[]): T[] => {
 
   return sortedArray;
 };
-
-console.log(selectionSort([22, 12, 1, 7, 3, 6, 9, 25, 17]));

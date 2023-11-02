@@ -10,6 +10,8 @@ function debounce(fn, delay = 200) {
   };
 }
 
+//
+
 function throttle(fn, delay = 100) {
   let isThrottled = false;
   let savedArgs;
@@ -39,3 +41,27 @@ function throttle(fn, delay = 100) {
 
   return wrapper;
 }
+
+//
+
+const search = (arr, num) => {
+  let left = 0;
+  let right = arr.length - 1;
+  let mid;
+
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
+
+    if (num === arr[mid]) {
+      return mid;
+    }
+
+    if (num < arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  return -1;
+};

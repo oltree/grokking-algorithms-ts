@@ -6,6 +6,8 @@ const sum = (arr: number[]): number => {
   return result;
 };
 
+//
+
 const recursiveSum = (arr: number[]): number => {
   if (arr.length === 1) {
     return arr[0];
@@ -14,6 +16,8 @@ const recursiveSum = (arr: number[]): number => {
   return arr[0] + recursiveSum(arr.slice(1));
 };
 
+//
+
 const recursiveCounter = <T>(list: T[]): number => {
   if (list.length === 1) {
     return 1;
@@ -21,6 +25,8 @@ const recursiveCounter = <T>(list: T[]): number => {
 
   return 1 + recursiveCounter(list.slice(1));
 };
+
+//
 
 const recursiveMax = (arr: number[]): number | null => {
   if (arr.length === 0) {
@@ -35,6 +41,8 @@ const recursiveMax = (arr: number[]): number | null => {
 
   return arr[0] > Number(subMax) ? arr[0] : subMax;
 };
+
+//
 
 const quickSort = (arr: number[]): number[] => {
   if (arr.length < 2) {

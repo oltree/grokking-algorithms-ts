@@ -19,9 +19,3 @@ const binary_search = <T>(list: T[], item: T): number | null => {
 
   return null;
 };
-
-const list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-console.log(binary_search(list, 8));
-console.log(binary_search(list, 20));
-console.log(binary_search(list, -5));
