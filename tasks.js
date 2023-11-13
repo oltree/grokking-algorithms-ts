@@ -121,3 +121,18 @@ const deepClone = (obj) => {
 
   return copy;
 };
+
+//палиндром
+const palindrom = (str) => {
+  str = str.toLowerCase().replace(/\s/g, '');
+
+  return str === str.split('').reverse().join('');
+
+  /* const length = Math.floor(str.length / 2);
+  for (let i = 0; i < length; i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true; */
+};
