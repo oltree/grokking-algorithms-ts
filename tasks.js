@@ -136,3 +136,31 @@ const palindrom = (str) => {
   }
   return true; */
 };
+
+//найти количество цифр
+const result1 = (arr) => {
+  return arr.reduce((acc, num) => {
+    if (acc[num]) {
+      acc[num] += 1;
+    } else {
+      acc[num] = 1;
+    }
+
+    return acc;
+  }, {});
+};
+const reslut2 = (arr) => {
+  const countMap = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+
+    if (countMap[num]) {
+      countMap[num] += 1;
+    } else {
+      countMap[num] = 1;
+    }
+  }
+
+  return countMap;
+};
