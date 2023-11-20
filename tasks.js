@@ -174,9 +174,29 @@ const fibonacci = (num) => {
   }
 
   return result[num];
+
   /* if (num < 2) {
     return num;
   }
 
   return fibonacci(num - 1) + fibonacci(num - 2); */
+};
+
+//Class Names
+const getClassNames = (arr) => {
+  const classNames = arr.reduce((acc, num) => {
+    if (acc[num]) {
+      acc[num] += 1;
+    } else {
+      acc[num] = 1;
+    }
+
+    return acc;
+  }, {});
+
+  const result = Object.keys(classNames).sort(
+    (a, b) => classNames[b] - classNames[a]
+  );
+
+  return result;
 };
