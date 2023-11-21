@@ -200,3 +200,26 @@ const getClassNames = (arr) => {
 
   return result;
 };
+
+//currencies
+const getCurrencies = (arr) => {
+  const result = {};
+
+  arr.forEach((item) => {
+    let [currency, type, amount] = item;
+
+    if (!result[currency]) {
+      result[currency] = [0, 0];
+    }
+
+    result[currency][type === 'buy' ? 0 : 1] += amount;
+  });
+
+  return result;
+
+  /* return arr.reduce((acc, curr) => {
+    acc[curr[0]] = acc[curr[0]] || [0, 0];
+    acc[curr[0]][curr[1] === 'buy' ? 0 : 1] += curr[2];
+    return acc;
+}, {}) */
+};
