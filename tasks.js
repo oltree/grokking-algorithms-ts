@@ -265,3 +265,8 @@ const removeDuplicates = (nums) => {
 
   return start;
 };
+
+//удалить дубликаты
+const uniqArray = array.reduce((uniq, item) => {
+  return uniq.includes(item) ? uniq : [...uniq, item];
+}, []);
