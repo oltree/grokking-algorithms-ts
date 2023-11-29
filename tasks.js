@@ -270,3 +270,16 @@ const removeDuplicates = (nums) => {
 const uniqArray = array.reduce((uniq, item) => {
   return uniq.includes(item) ? uniq : [...uniq, item];
 }, []);
+
+//поиск непарного числа
+const singleNumber = (nums) => {
+  const uniq = [...new Set(nums)];
+
+  const reduceSumm = (s, i) => s + i;
+
+  const numSum = nums.reduce(reduceSumm);
+
+  const uniqSum = uniq.reduce(reduceSumm);
+
+  return uniqSum * 2 - numSum;
+};
