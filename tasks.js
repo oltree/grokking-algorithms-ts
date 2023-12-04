@@ -267,9 +267,11 @@ const removeDuplicates = (nums) => {
 };
 
 //удалить дубликаты
-const uniqArray = array.reduce((uniq, item) => {
-  return uniq.includes(item) ? uniq : [...uniq, item];
-}, []);
+const uniqArray = (array) =>
+  array.reduce(
+    (uniq, item) => (uniq.includes(item) ? uniq : [...uniq, item]),
+    []
+  );
 
 //поиск непарного числа
 const singleNumber = (nums) => {
@@ -299,4 +301,17 @@ const isPalindromeNumber = (x) => {
   }
 
   return x === rev || x === Math.trunc(rev / 10);
+};
+
+//случайная сортировка
+const shuffle = (arr) => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const tmp = arr[i];
+    const rnd = Math.floor(Math.random() * (i + 1));
+
+    arr[i] = arr[rnd];
+    arr[rnd] = tmp;
+  }
+
+  return arr;
 };
