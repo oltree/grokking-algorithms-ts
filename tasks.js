@@ -280,7 +280,6 @@ const singleNumber = (nums) => {
   const reduceSumm = (s, i) => s + i;
 
   const numSum = nums.reduce(reduceSumm);
-
   const uniqSum = uniq.reduce(reduceSumm);
 
   return uniqSum * 2 - numSum;
@@ -314,4 +313,27 @@ const shuffle = (arr) => {
   }
 
   return arr;
+};
+
+//пересечение 2 массивов
+const intersect = (nums1, nums2) => {
+  const result = [];
+
+  const map = nums1.reduce((acc, i) => {
+    acc[i] = acc[i] ? acc[i] + 1 : 1;
+
+    return acc;
+  }, {});
+
+  for (let i = 0; i < nums2.length; i++) {
+    const current = nums2[i];
+    const currentMapItem = map[current];
+
+    if (currentMapItem && currentMapItem > 0) {
+      result.push(current);
+      map[current] = currentMapItem - 1;
+    }
+  }
+
+  return result;
 };
